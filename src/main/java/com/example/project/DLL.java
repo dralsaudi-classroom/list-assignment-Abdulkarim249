@@ -65,6 +65,7 @@ public class DLL<T> {
             current = current.next;
     }
     public void removeBetween(T e1, T e2) {
+        try{
          DLLNode<T> temp=null,temp2=null;
          findFirst();
         while(!(retrieve().equals(e2))){
@@ -75,6 +76,9 @@ public class DLL<T> {
         temp2=temp.next;
         temp.next=current.previous;
         current.previous=temp2;
-        
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+            
     }
 }
