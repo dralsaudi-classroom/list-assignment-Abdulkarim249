@@ -68,7 +68,7 @@ public class DLL<T> {
         try{
          DLLNode<T> temp=null,temp2=null;
          current=head;
-        while(!(current.data.equals(e2))){
+        while(!(current.data.equals(e2) && current.next !=null)){
             if(current.data.equals(e1))
                 temp=current;
             current=current.next;
