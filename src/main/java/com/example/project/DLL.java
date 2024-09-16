@@ -68,14 +68,20 @@ public class DLL<T> {
         try{
          DLLNode<T> temp=null,temp2=null;
          current=head;
-        while(!(current.data.equals(e2) && current.next !=null)){
+        while(current.next !=null && !(current.data.equals(e2))){
             if(current.data.equals(e1))
                 temp=current;
             current=current.next;
         }
-        temp2=temp.next;
-        temp.next=current.previous;
-        current.previous=temp2;
+        if(temp==null || !(current.data.equals(e2))){
+            current=head;
+            return;
+        }
+        
+        temp.next=current;
+        current.previous=temp;
+        current=head;
+       
         }catch(Exception e){
             e.printStackTrace();
         }
